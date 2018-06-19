@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_18_202635) do
+ActiveRecord::Schema.define(version: 2018_06_19_191608) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -47,6 +47,11 @@ ActiveRecord::Schema.define(version: 2018_06_18_202635) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "newgames", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "properties", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -64,6 +69,11 @@ ActiveRecord::Schema.define(version: 2018_06_18_202635) do
     t.string "name"
     t.string "op_stats_link"
     t.integer "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "welcomes", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

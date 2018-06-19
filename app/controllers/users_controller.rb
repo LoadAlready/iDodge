@@ -5,6 +5,11 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    # @user_1 = User.new
+    # @user_2 = User.new
+    # @user_3 = User.new
+    # @user_4 = User.new
+    # @user_5 = User.new
   end
 
   # GET /users/1
@@ -14,7 +19,11 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    @user = User.new
+    @user_1 = User.new
+    @user_2 = User.new
+    @user_3 = User.new
+    @user_4 = User.new
+    @user_5 = User.new
   end
 
   # GET /users/1/edit
@@ -24,17 +33,20 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params)
 
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
-      else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
-    end
+    @user_1 = User.new(user_params)
+    @user_2 = User.new(user_params)
+    @user_3 = User.new(user_params)
+    @user_4 = User.new(user_params)
+    @user_5 = User.new(user_params)
+
+    @user_1.save
+    @user_2.save
+    @user_3.save
+    @user_4.save
+    @user_5.save
+
+
   end
 
   # PATCH/PUT /users/1
