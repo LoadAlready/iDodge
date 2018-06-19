@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 2018_06_18_202635) do
   create_table "champions", force: :cascade do |t|
     t.string "name"
     t.string "lol_id"
+    t.string "lol_title"
+    t.string "lol_namekey"
     t.string "op_url"
     t.string "lol_picture_url"
     t.string "win_percentage"

@@ -1,5 +1,13 @@
+
+require 'rest-client'
+require 'json'
+require 'pry'
+require 'rubygems'
+require 'nokogiri'
+
 Team.destroy_all
 Category.destroy_all
+Champion.destroy_all
 
 
 x = Team.create(side_name: "Blue Side")
@@ -35,3 +43,6 @@ x = Property.create(name: "Teleport champion", description: "Champions that have
 x = Property.create(name: "Blind champion", description: "Blinds champions")
 x = Property.create(name: "Blocker champion", description: "Any champion with the ability to create terrain.")
 x = Property.create(name: "Interrupt champion", description: "Any champion that has an ability that is able to generally stop channeled abilities to stop other champions ability to cast abilities.")
+
+
+Champion.get_champ_info_from_lol

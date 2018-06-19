@@ -3,6 +3,8 @@ class CreateChampions < ActiveRecord::Migration[5.2]
     create_table :champions do |t|
       t.string :name
       t.string :lol_id
+      t.string :lol_title
+      t.string :lol_namekey
       t.string :op_url
       t.string :lol_picture_url
       t.string :win_percentage

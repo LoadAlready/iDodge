@@ -12,14 +12,13 @@
   <tbody>
     <% @champions.each do |champion| %>
       <tr>
+        <td><%= champion.name %></td>
         <td><%= link_to 'Show', champion %></td>
         <td><%= link_to 'Edit', edit_champion_path(champion) %></td>
-        <td><%= link_to 'Destroy', champion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Champion', new_champion_path %>
