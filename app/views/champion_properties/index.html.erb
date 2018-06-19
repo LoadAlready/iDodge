@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Champion Properties</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @champion_properties.each do |champion_property| %>
+      <tr>
+        <td><%= link_to 'Show', champion_property %></td>
+        <td><%= link_to 'Edit', edit_champion_property_path(champion_property) %></td>
+        <td><%= link_to 'Destroy', champion_property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Champion Property', new_champion_property_path %>
