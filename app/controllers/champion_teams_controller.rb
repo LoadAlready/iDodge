@@ -28,17 +28,12 @@ class ChampionTeamsController < ApplicationController
   # POST /championteams
   # POST /championteams.json
   def create
-    @championteam = ChampionTeam.new(championteam_params)
 
-    respond_to do |format|
-      if @championteam.save
-        format.html { redirect_to @championteam, notice: 'Newgame was successfully created.' }
-        format.json { render :show, status: :created, location: @championteam }
-      else
-        format.html { render :new }
-        format.json { render json: @championteam.errors, status: :unprocessable_entity }
-      end
+    params["users_container"].each do |user|
+    if user["name"] != ""
+      User.create(championteam_params(user))
     end
+end
   end
 
   # PATCH/PUT /championteams/1

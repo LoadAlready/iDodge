@@ -1,0 +1,9 @@
+<%= form_tag users_path do %>
+<% @users_arr.each do |user| %>
+  <%= fields_for 'users_container[]', user do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  <% end %>
+<% end %>
+<%= f.submit %>
+<% end %>

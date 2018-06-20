@@ -5,11 +5,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
-    # @user_1 = User.new
-    # @user_2 = User.new
-    # @user_3 = User.new
-    # @user_4 = User.new
-    # @user_5 = User.new
+
   end
 
   # GET /users/1
@@ -19,11 +15,7 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    @user_1 = User.new
-    @user_2 = User.new
-    @user_3 = User.new
-    @user_4 = User.new
-    @user_5 = User.new
+
   end
 
   # GET /users/1/edit
@@ -33,18 +25,26 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-
-    @user_1 = User.new(user_params)
-    @user_2 = User.new(user_params)
-    @user_3 = User.new(user_params)
-    @user_4 = User.new(user_params)
-    @user_5 = User.new(user_params)
-
-    @user_1.save
-    @user_2.save
-    @user_3.save
-    @user_4.save
-    @user_5.save
+    counter = 0
+    params["users_container"].each do |user|
+    if user["name"] != ""
+      @user = User.new(name: params['users_container'][counter]['name'], team_id: 1)
+      @user.save
+    end
+    counter += 1
+  end
+  redirect_to champions_path
+    # @user_1 = User.new(user_params)
+    # @user_2 = User.new(user_params)
+    # @user_3 = User.new(user_params)
+    # @user_4 = User.new(user_params)
+    # @user_5 = User.new(user_params)
+    #
+    # @user_1.save
+    # @user_2.save
+    # @user_3.save
+    # @user_4.save
+    # @user_5.save
 
 
   end
@@ -80,7 +80,7 @@ class UsersController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def user_params
-      params.fetch(:user, {})
+    def championteam_params
+      params.require(:user).permit(:name, :team_id)
     end
 end

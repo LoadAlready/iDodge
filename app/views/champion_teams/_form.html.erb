@@ -1,7 +1,7 @@
 
 <%= form_tag users_path do %>
   <% @users_arr.each do |user| %>
-    <%= fields_for 'users[]', user do |p| %>
+    <%= fields_for 'users_container[]', user do |p| %>
 
       <div class="field">
         <%= p.label :name %><br>
