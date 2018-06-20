@@ -10,6 +10,7 @@ class ChampionsController < ApplicationController
   # GET /champions/1
   # GET /champions/1.json
   def show
+    
   end
 
   # GET /champions/new

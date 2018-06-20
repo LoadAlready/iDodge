@@ -20,7 +20,7 @@ class Champion < ApplicationRecord
   end
 
   def self.get_champ_info_from_lol
-    page = Nokogiri::HTML(RestClient.get("https://na1.api.riotgames.com/lol/static-data/v3/champions?locale=en_US&dataById=false&api_key=RGAPI-31eb5513-f9b9-469e-b6fe-3ebea5e00969"))
+    page = Nokogiri::HTML(RestClient.get("https://na1.api.riotgames.com/lol/static-data/v3/champions?locale=en_US&dataById=false&api_key=RGAPI-5b047a50-aaf1-46b6-822b-4941a44bb275"))
     champion_hash = JSON.parse(page)
       champion_hash.each do |key, value|
         value.each do |k, v|

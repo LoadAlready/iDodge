@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+
   # GET /users
   # GET /users.json
   def index
@@ -25,6 +26,8 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+    helpers.game_params(params)
+    User.destroy_all
     counter = 0
     params["users_container"].each do |user|
     if user["name"] != ""
@@ -33,7 +36,8 @@ class UsersController < ApplicationController
     end
     counter += 1
   end
-  redirect_to champions_path
+  
+  redirect_to champion_teams_path
     # @user_1 = User.new(user_params)
     # @user_2 = User.new(user_params)
     # @user_3 = User.new(user_params)

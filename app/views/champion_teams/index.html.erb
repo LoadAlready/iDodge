@@ -1,25 +1,111 @@
-<p id="notice"><%= notice %></p>
+<h1>Game Info<h1>
 
-<h1>Champion Teams</h1>
-
+<p>
 <table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <tr>
+    <th>Champion Name</th>
+    <th>Champ</th>
+    <th>Stats</th>
+    <th>Champ</th>
 
+  </tr>
+  </br>
+  <tr>
+    <% champ1_image = "http://opgg-static.akamaized.net/images/lol/champion/"+team_champ1.lol_namekey.to_s+".png" %>
+    <td><%= user1 %></td>
+    <td><%= get_champ_matchup(team_champ1.lol_namekey, opp_team_champ1.lol_namekey) %></td>
+    <td><%= opp_team_champ1.name %></td>
+  </tr>
+  <tr>
+    <td><%= user2 %></td>
+    <td><%= team_champ2.name %></td>
+    <td><%= get_champ_matchup(team_champ2.lol_namekey, opp_team_champ2.lol_namekey) %></td>
+    <td><%= opp_team_champ2.name %></td>
+  </tr>
+  <tr>
+    <td><%= user3 %></td>
+    <td><%= team_champ3.name %></td>
+    <td><%= get_champ_matchup(team_champ3.lol_namekey, opp_team_champ3.lol_namekey) %></td>
+    <td><%= opp_team_champ3.name %></td>
+  </tr>
+  <tr>
+    <td><%= user4 %></td>
+    <td><%= team_champ4.name %></td>
+    <td><%= get_champ_matchup(team_champ4.lol_namekey, opp_team_champ4.lol_namekey) %></td>
+    <td><%= opp_team_champ4.name %></td>
+  </tr>
+  <tr>
+    <td><%= user5 %></td>
+    <td><%= team_champ5.name %></td>
+    <td><%= get_champ_matchup(team_champ5.lol_namekey, opp_team_champ5.lol_namekey) %></td>
+    <td><%= opp_team_champ5.name %></td>
+  </tr>
+</table>
+</p>
+
+
+
+<table class="ui very basic collapsing celled table">
+  <thead>
+    <tr><th>Your Team</th>
+    <th>Stats</th>
+    <th>Enemy Team</th>
+  </tr></thead>
   <tbody>
-    <% @champion_teams.each do |champion_team| %>
-      <tr>
-        <td><%= link_to 'Show', champion_team %></td>
-        <td><%= link_to 'Edit', edit_champion_team_path(champion_team) %></td>
-        <td><%= link_to 'Destroy', champion_team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <tr>
+      <td>
+        <% champ1_image = "http://opgg-static.akamaized.net/images/lol/champion/"+team_champ1.lol_namekey.to_s+".png" %>
+        <h4 class="ui image header">
+          <%= image_tag champ1_image %>
+          <div class="content">
+            <%= user1 %>
+            <div class="sub header"><%= link_to team_champ1.name, team_champ1.op_url %>
+          </div>
+        </div>
+      </h4></td>
+    </tr>
+    <tr>
+      <td>
+        <h4 class="ui image header">
+          <% champ1_image = "http://opgg-static.akamaized.net/images/lol/champion/"+team_champ1.lol_namekey.to_s+".png" %>
+          <%= image_tag champ1_image %>
+          <div class="content">
+            Matthew
+            <div class="sub header">Fabric Design
+          </div>
+        </div>
+      </h4></td>
+      <td>
+        15
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h4 class="ui image header">
+          <img src="/images/avatar2/small/lindsay.png" class="ui mini rounded image">
+          <div class="content">
+            Lindsay
+            <div class="sub header">Entertainment
+          </div>
+        </div>
+      </h4></td>
+      <td>
+        12
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h4 class="ui image header">
+          <img src="/images/avatar2/small/mark.png" class="ui mini rounded image">
+          <div class="content">
+            Mark
+            <div class="sub header">Executive
+          </div>
+        </div>
+      </h4></td>
+      <td>
+        11
+      </td>
+    </tr>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Champion Team 1', new_champion_team_path %>

@@ -4,7 +4,11 @@ class ChampionTeamsController < ApplicationController
   # GET /championteams
   # GET /championteams.json
   def index
+    @user1 = helpers.view_game_params
     @champion_teams = ChampionTeam.all
+  end
+  def index1
+
   end
 
   # GET /championteams/1
@@ -25,15 +29,12 @@ class ChampionTeamsController < ApplicationController
   def edit
   end
 
-  # POST /championteams
-  # POST /championteams.json
   def create
-
     params["users_container"].each do |user|
-    if user["name"] != ""
-      User.create(championteam_params(user))
+      if user["name"] != ""
+        User.create(championteam_params(user))
+      end
     end
-end
   end
 
   # PATCH/PUT /championteams/1
@@ -61,12 +62,10 @@ end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_championteam
-      @championteam = Newgame.find(params[:id])
+    def champion_params
+      params.require(:champion).permit(:name)
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def championteam_params
       params.require(:user).permit(:name, :team_id)
     end
