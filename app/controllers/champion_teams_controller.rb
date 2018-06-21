@@ -4,7 +4,7 @@ class ChampionTeamsController < ApplicationController
   # GET /championteams
   # GET /championteams.json
   def index
-    @user1 = helpers.view_game_params
+    # @user1 = helpers.view_game_params
     @champion_teams = ChampionTeam.all
   end
   def index1

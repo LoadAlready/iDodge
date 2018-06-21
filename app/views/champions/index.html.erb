@@ -1,24 +1,104 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Semantic UI CDN</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
+</head>
+<body>
+  <h1>Champions</h1>
 
-<h1>Champions</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @champions.each do |champion| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= champion.name %></td>
-        <td><%= link_to 'Show', champion %></td>
-        <td><%= link_to 'Edit', edit_champion_path(champion) %></td>
-
+        <th colspan="3"></th>
       </tr>
-    <% end %>
+    </thead>
+
+    <tbody>
+      <% @champions.each do |champion| %>
+        <tr>
+          <td><%= champion.name %></td>
+          <td><%= link_to 'Show', champion %></td>
+          <td><%= link_to 'Edit', edit_champion_path(champion) %></td>
+
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+</body>
+</html>
+
+
+
+<table class="ui very basic collapsing celled table">
+  <thead>
+    <tr><th>Champions</th>
+    <th>Correct Guesses</th>
+  </tr></thead>
+  <tbody>
+    <tr>
+      <td>
+        <% @champions.each do |champion| %>
+        <h4 class="ui image header">
+          <img src="/images/avatar2/small/lena.png" class="ui mini rounded image">
+          <div class="content">
+              <td><%= champion.name %></td>
+            <div class="sub header">Human Resources
+              <% end %>
+          </div>
+        </div>
+      </h4></td>
+      <td>
+        22
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h4 class="ui image header">
+          <img src="/images/avatar2/small/matthew.png" class="ui mini rounded image">
+          <div class="content">
+            Matthew
+            <div class="sub header">Fabric Design
+          </div>
+        </div>
+      </h4></td>
+      <td>
+        15
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h4 class="ui image header">
+          <img src="/images/avatar2/small/lindsay.png" class="ui mini rounded image">
+          <div class="content">
+            Lindsay
+            <div class="sub header">Entertainment
+          </div>
+        </div>
+      </h4></td>
+      <td>
+        12
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h4 class="ui image header">
+          <img src="/images/avatar2/small/mark.png" class="ui mini rounded image">
+          <div class="content">
+            Mark
+            <div class="sub header">Executive
+          </div>
+        </div>
+      </h4></td>
+      <td>
+        11
+      </td>
+    </tr>
   </tbody>
 </table>
-
-<br>
